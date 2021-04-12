@@ -11,10 +11,10 @@ client.on('ready', () => {
         rsi().then((res) => {
             const rsiValue = res.value;
             let msg = `[+] ${rsiValue} `
-            if (rsiValue >= 80) {
+            if (rsiValue >= 70) {
                 msg += "과매수 상태"
                 my_channel.send(msg);
-            } else if (rsiValue <= 20) {
+            } else if (rsiValue <= 30) {
                 msg += "과매도 상태"
                 my_channel.send(msg);
             }
@@ -29,6 +29,12 @@ client.on('message', msg => {
 
     if (msg.content === 'ping') {
         msg.reply('Pang!');
+    }
+
+    if (msg.content === "rsi"){
+        rsi().then((res) => {
+            msg.reply(`rsi value = ${res.value}`);
+        })
     }
 });
 
