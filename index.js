@@ -56,7 +56,7 @@ client.on('message', msg => {
                 }
                 // my_channel.send(msg);
             })
-        }, 6000);
+        }, 60000);
     }
 });
 
