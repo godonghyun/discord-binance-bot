@@ -1,1 +1,1 @@
-nope
+# discord RSI alert bot
